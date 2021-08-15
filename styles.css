@@ -1,0 +1,48 @@
+body {
+  background: radial-gradient(ellipse at center, #0e2053 0%, #06000f 70%);
+}
+.timer {
+  min-height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: Georgia, 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+    sans-serif;
+  color: #83afe2;
+  text-shadow: 0 0 40px rgb(255, 255, 255), 0 0 20px rgba(76, 58, 235, 0);
+}
+.field {
+  text-align: center;
+}
+.field:not(:last-child) {
+  margin-right: 60px;
+}
+.value {
+  position: relative;
+  display: block;
+  letter-spacing: 12px;
+  font-size: 150px;
+}
+.field:not(:first-child) .value::before {
+  content: ':';
+  position: absolute;
+  left: -41%;
+  top: -11px;
+}
+.label {
+  letter-spacing: 12px;
+  font-size: 34px;
+  color: rgb(1, 0, 3);
+  text-shadow: 0 0 40px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+.title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+  color: rgb(113, 181, 226);
+  text-shadow: 0 0 40px rgb(255, 255, 255), 0 0 20px rgba(253, 253, 253, 0.5);
+}
+.ring {
+  display: flex;
+  justify-content: center;
+}
