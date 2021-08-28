@@ -6,7 +6,7 @@ class CountdownTimer {
     this.getRefs();
   }
   start() {
-  const intervalId = setInterval(() => {
+    const intervalId = setInterval(() => {
     const deltaTime = this.targetDate - Date.now();
     const { days, hours, mins, secs } = this.getTimeComponents(deltaTime);
     this.updateTimerFace({ days, hours, mins, secs });
@@ -15,8 +15,14 @@ class CountdownTimer {
   }
   stop({ days, hours, mins, secs }, intervalId) {
     // console.log(intervalId);
-    if (days === '00' && hours === '00' && mins === '00' && secs === '00') {
-    clearInterval(intervalId)
+    if (Number(secs)<0) {
+      clearInterval(intervalId)
+      // alert("Time is over!");
+      days = "00";
+      hours = "00";
+      mins = "00";
+      secs = "00";
+      this.updateTimerFace({ days, hours, mins, secs })
     }
   }
   getRefs() {
@@ -47,7 +53,7 @@ class CountdownTimer {
 };
 
 new CountdownTimer({selector: '#timer-1',
-    targetDate: new Date('August 23, 2021'),})
+    targetDate: new Date('August 28, 2021'),})
 
 // const refs = {
 //   daysRef: document.querySelector('[data-value="days"]'),
